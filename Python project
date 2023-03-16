@@ -1,0 +1,31 @@
+class Library:
+        def __init__(self,listofbooks):
+            self.availablebooks=listofbooks
+        def displayAvailablebooks(self):
+                print("The books we have in our library are:")
+                for book in self.availablebooks:
+                    print(book)
+                   
+        def borrowBook(self,requestedBook):
+            if requestedBook in self.availablebooks:
+                print("The book you requested has been issued.")
+                self.availablebooks.remove(requestedBook)
+            else:
+                  print("Sorry the book you have requested is currently not in the library")
+        def returnBook(self,returnedBook):
+            self.availablebooks.append(returnedBook)
+            print("Thanks for returning your borrowed book")
+            
+
+
+class Student:
+        def requestBook(self):
+            name = input("Enter your name => ")
+            print("Enter the name of the book you'd like to borrow =>")
+            self.book=input()
+            return self.book
+        def returnBook(self):
+            name = input("Enter your name => ")
+            print("Enter the name of the book you'd like to return =>")
+            self.book=input()
+            return self.book
