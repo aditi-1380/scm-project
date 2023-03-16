@@ -29,3 +29,34 @@ class Student:
             print("Enter the name of the book you'd like to return =>")
             self.book=input()
             return self.book
+
+
+def main():
+    library=Library(["JAVA","PYTHON","PROGRAMMING MASTER","LEARN TO CODE"])
+    student=Student()
+    done=True
+    while done==True:
+        print("""
+                       * *LIBRARY MENU* *
+                  1. Display all available books
+                  2. Request a book
+                  3. Return a book
+                  4. Exit
+                  """)
+        a = int(input("Enter Choice:"))
+        if a==1:
+                        library.displayAvailablebooks()
+                    
+        elif a==2:
+                        library.borrowBook(student.requestBook())
+                    
+        elif a==3:
+                        library.returnBook(student.returnBook())
+                    
+        elif a==4:
+            print("Thanks for choosing our Library.")
+            break
+        else:
+            print("Invalid Choice!")
+ 
+main()
